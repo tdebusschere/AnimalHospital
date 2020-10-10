@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Homepage, hospital {% endblock %}
+
+{% block content %} 
+{% if user.is_authenticated %}
+	Hi {{user.username}}!
+	<p><a href="{% url 'logout' %}">Log Out!</a></p>
+	<p><a href="{% url 'login' %}">Login with another account</a></p>
+	<p><a href="{% url 'owneradd' %}">AddUser</a></p>
+	<p><a href="{% url 'petadd' %}">AddPet</a></p>
+	{% if user.username != 'Client' %}
+	<p><a href="{% url 'ownerunconfirmed' %}">View Unconfirmed</a></p>
+	<p><a href="{% url 'ownersearch' %}">Search Owners</a></p>
+	{% endif %}
+{% else %}
+	<p>You are not logged in</p>
+	<p><a href="{% url 'login' %}">Log In</a></p>
+	<p><a href="{% url 'signup' %}">Register</a></p>
+{% endif %}
+{% endblock %}

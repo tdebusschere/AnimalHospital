@@ -1,0 +1,12 @@
+<!-- templates/registration/Login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Edit Owner{% endblock %}
+
+{% block content %}
+<h2>新增客戶</h2>
+<form method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type='submit'>確認</button>
+{% endblock %}

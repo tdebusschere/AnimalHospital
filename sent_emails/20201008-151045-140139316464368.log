@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 192.168.2.78:1234
+From: webmaster@localhost
+To: tdebusschere@gmail.com
+Date: Thu, 08 Oct 2020 15:10:45 -0000
+Message-ID: <160216984500.3481.14667882260710328895@prototype>
+
+
+You're receiving this email because you requested a password reset for your user account at 192.168.2.78:1234.
+
+Please go to the following page and choose a new password:
+
+http://192.168.2.78:1234/accounts/reset/MQ/5kk-4efdce7de227de8d8c02/
+
+Your username, in case you’ve forgotten: tongtong
+
+Thanks for using our site!
+
+The 192.168.2.78:1234 team
+
+
+
+-------------------------------------------------------------------------------

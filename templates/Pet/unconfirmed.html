@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Unconfirmed Users{% endblock %}
+
+{% block content %}
+{% if updates  %}
+	<table>
+	 <tr>
+		 <th> Owner Name </th> 
+		 <th> Gender  </th>
+		 <th> Phone Number </th> 
+		 <th> View Owner Profile </th> 
+		 <th> Edit Owner Profile </th>
+	<tr>
+	<ul>
+	{% for entry in updates %}
+	<tr>
+	<th> {{ entry.owner_name }} </th>
+	<th> {{ entry.gender  }} </th>
+	{% if entry.phone_home %}
+	<th> {{ entry.phone_home }} </th>
+	{% elif entry.phone_work %}
+	<th> {{ entry.phone_work }} </th>
+	{% elif entry.cellphone1 %}
+	<th> {{ entry.cellphone1 }} </th>
+	{% else %}
+	<th> {{ entry.cellphone2 }} </th>
+	{% endif %}
+	<th> <a href="{% url 'ownerdetail' pk=entry.owner_id %}"> View Profile </a></th>
+	<th> <a href="{% url 'owneredit' pk=entry.owner_id %}"> Edit Profile </a> </th>
+	</tr>
+	{% endfor %}
+	</ul>
+	</table>
+{% else %}
+<p> No unconfirmed Users </p>
+
+{% endif %}
+{% endblock %}

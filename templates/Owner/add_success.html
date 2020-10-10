@@ -1,0 +1,9 @@
+<!-- templates/registration/Login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Adding User Complete{% endblock %}
+
+{% block content %} Succesfully added user: {{ object.owner_name }}!
+<p><a href="{% url 'petaddowner' pk=object.owner_id %}">Add a Pet </a></p>
+<p><a href="{% url 'home' %}">Return to Home Page </a></p>
+{% endblock %}

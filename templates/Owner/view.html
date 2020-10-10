@@ -1,0 +1,11 @@
+<!-- templates/registration/Login.html -->
+{% extends 'base.html' %}
+
+{% block title %}View OwnerDetail{% endblock %}
+
+{% block content %}
+<h2>Owner: {{object.owner_name}} </h2>
+{% for key in object.get_fields %}
+<p> {{ key.label }} : {{ key.value }}  </p>
+{% endfor %}
+{% endblock %}
