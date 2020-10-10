@@ -56,6 +56,10 @@ Logging = {
 }
 # Application definition
 
+BOOTSTRAP4 = {
+        'include_jquery' : True,
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,6 +68,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',
+    'bootstrap_datepicker_plus',
+    'bootstrap4',
     'accounts.apps.AccountsConfig',
     'Owner.apps.OwnerConfig',
     'Pet.apps.PetConfig',

@@ -1,6 +1,11 @@
 from django.forms import ModelForm
+from django import forms
 from django.utils.translation import gettext_lazy as _
+
 from .models import Owner
+
+from bootstrap_datepicker_plus import DatePickerInput
+
 
 ofields = ['owner_name','owner_name_english','gender','birthday',\
            'phone_home','phone_work','cellphone1','cellphone2',\
@@ -25,13 +30,13 @@ olabels = {
 
 
 class OwnerForm(ModelForm):
-
+    
     class Meta:
         model = Owner
         exclude =['comment']
         fields  = ofields 
         labels  = olabels
-
+        widgets = {'birthday' : DatePickerInput(format='%Y-%m-%d'),}
 
 class OwnerEditForm( ModelForm):
     
@@ -42,4 +47,4 @@ class OwnerEditForm( ModelForm):
         
         olabels['comment'] = _('備註欄')
         labels = olabels
-
+        widgets = {'birthday' : DatePickerInput(format='%Y-%md-%d'),}

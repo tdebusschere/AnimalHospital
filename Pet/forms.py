@@ -2,6 +2,8 @@ from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 from .models import Pet
 
+from bootstrap_datepicker_plus import DatePickerInput
+
 ofields = ['pet_name','species','breed', 'birthday','alive','sex','neutered', 'weight', \
            'blood_type','colour','temper','allergies','preconditions','other_pets', \
            'other_id', 'first_visit', 'pet_picture']
@@ -30,7 +32,8 @@ class PetForm(ModelForm):
         exclude =['comment']
         fields  = ofields 
         #labels  = olabels
-
+        widgets = {'birthday' : DatePickerInput( format = '%Y-%m-%d' ), 
+                   'first_visit' : DatePickerInput( format = '%Y-%m-%d' ), }
 
 class PetEditForm( ModelForm):
     
@@ -41,4 +44,5 @@ class PetEditForm( ModelForm):
         
         #olabels['comment'] = _('備註欄')
         #labels = olabels
-
+        widgets = {'birthday' : DatePickerInput( format='%Y-%m-%d' ),
+                   'first_visit': DatePickerInput( format='%Y-%m-%d'), }

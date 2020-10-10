@@ -8,5 +8,8 @@
 <form method='post'>
 	{% csrf_token %}
 	{{ form.as_p }}
-	<button type='submit'>確認</button>
+	<div>
+		<button type='submit'>確認</button>
+		<input type=button value="Previous Page" onclick="javascript:history.go(-1);">
+	</div>
 {% endblock %}

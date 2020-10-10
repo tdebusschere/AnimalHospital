@@ -11,7 +11,14 @@
 	{{ form.as_p }}
 	<div>
 	<button type='submit'>確認</button>
-	<button type='button'><a href="{% urls 'home:home' %}">Home</button>
+	<button type='button'><a href="{% url 'home:home' %}">Home</a></button>
 	</div>
-	<p> {{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'home:home' %}</p>
 {% endblock %}
+
+<script>
+	$(function() {
+		$("#datetimepicker1").datetimepicker({
+			format: 'DD/MM/YYYY'
+		});
+	});
+</script>
